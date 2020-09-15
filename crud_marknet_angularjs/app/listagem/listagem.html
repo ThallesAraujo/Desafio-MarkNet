@@ -1,0 +1,32 @@
+<link rel="stylesheet" href="listagem/listagem.css">
+<div class="main-container" ng-controller="listagemCtrl">
+    <div class="side-by-side" style="padding-bottom: 30px!important">
+        <h1 class="title">listagem</h1>
+        <button ng-click="addUsuario()">Adicionar Usuário</button>
+    </div>
+    <table>
+        <tr>
+            <th>Nome</th>
+            <th>Idade</th>
+            <th>Sexo</th>
+            <th>Ações</th>
+        </tr>
+        <tr ng-repeat="usuario in usuarios">
+            <td>{{usuario.nome}}</td>
+            <td>{{usuario.idade}}</td>
+            <td>{{usuario.sexo}}</td>
+            <td>
+                <div class="actions"><button ng-click="editUsuario(usuario.id)" title="Editar Usuário">
+                    <i class="gg-pen"></i>
+                </button>
+                <button ng-click="deleteUsuario(usuario.id)" title="Remover Usuário">
+                    <i class="gg-trash"></i>
+                </button></div>    
+            </td>
+        </tr>
+
+    </table>
+
+
+
+</div>
